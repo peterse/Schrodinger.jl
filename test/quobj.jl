@@ -74,22 +74,21 @@ end
 end
 
 @testset "Display" begin
-    prefix = VERSION < v"0.7.0-" ? "Schrodinger." : ""
     @test sprint(show, "text/plain", qb"01"+qb"10") ==
     """
-    4-d $(prefix)Ket{SparseVector{Float64,Int64},2} with dimensions 2⊗2
+    4-d Ket{SparseVector{Float64,Int64},2} with dimensions 2⊗2
     1.00∠0°|0,1⟩ + 1.00∠0°|1,0⟩
     """
     @test sprint(show, normalize!(qb"01"+qb"10")) == "0.71∠0°|0,1⟩ + 0.71∠0°|1,0⟩"
     @test sprint(show, "text/plain", Bra([0,1,0])) ==
     """
-    3-d $(prefix)Bra{Array{Float64,1},1} with dimensions 3
+    3-d Bra{Array{Float64,1},1} with dimensions 3
     1.00∠0°⟨1|
     """
     @test sprint(show, Bra([0,0,1,0])) == "1.00∠0°⟨2|"
     @test sprint(show, "text/plain", maxmixed(4)) ==
     """
-    4×4 $(prefix)Operator{SparseMatrixCSC{Float64,Int64},1} with dimensions 4
+    4×4 Operator{SparseMatrixCSC{Float64,Int64},1} with dimensions 4
      0.25  0.0   0.0   0.0 
      0.0   0.25  0.0   0.0 
      0.0   0.0   0.25  0.0 

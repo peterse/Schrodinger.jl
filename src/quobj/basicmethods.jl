@@ -1,6 +1,6 @@
 import Base: length, size, eltype, getindex, setindex!, similar, copy, hash,
     isequal, ==, convert, promote_rule, isapprox, show
-import Compat.LinearAlgebra: checksquare, diag, complex, norm, rank,
+import LinearAlgebra: checksquare, diag, complex, norm, rank,
     normalize!, normalize, ishermitian, issymmetric, isdiag, triu, tril
 if VERSION < v"1.0.0-"
     import Base: full
