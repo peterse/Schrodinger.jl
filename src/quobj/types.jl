@@ -3,6 +3,8 @@ const SFloat{T<:AbstractFloat} = Union{T, Complex{T}}
 const SMatrix{T<:SFloat} = AbstractMatrix{T}
 const SVector{T<:SFloat} = AbstractVector{T}
 
+const AbstractVecOrTuple{T} = Union{AbstractVector{T},Tuple{Vararg{T}}}
+
 # Base QuObject abstract types
 abstract type QuObject end
 abstract type QuVector <: QuObject end
